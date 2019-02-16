@@ -2,22 +2,23 @@
 
 #### 用法：
 
-在一个非go path的路径中新建一个项目，然后使用`go mod init` 就可以初始化一个新的包，其实跟github(gitlab都行)用在一起更好
+在一个非go path的路径中新建一个项目，然后使用`go mod init` 就可以初始化一个新的包(要开启这个 `export GO111MODULE=on`写入.bash_profile即可 win的同学自己找找设置 GO111MODULE的win版本设置方法哈)，其实跟github(gitlab都行)用在一起更好
 
 1. 在github上新建一个项目，例如说 test
 2. 在本地将这个远程包给clone过来，然后这个文件夹里面就是一个.git 隐藏的文件项目这个就是git的管理文件包
 3. 将此包放在远离 go path的文件路径里，然后使用 `go mod init` 就可以创建一个名为 github.com/XXX/test的包
-记住，这个包名不能随意称呼，你的文件夹的名称就是你的包名然后里面的XX.go的名字无所谓，只要`package test`
-用对就可以了，然后你会发现你的包内出现了两个文件 **go.sum** 和 **go.mod**  这个sum包你可以忽略，主要是go.mod包
-这里的包 首先开头是 module github.com/XXX/test 声明了 这个包的具体名称是 **"github.com/XXX/test"** 但是在调用的时候 包的名称是 test
-为什么module后面要加上所有的路径呢，原因也是很简单，就是当你 `go get github.com/xxx/test`的时候用，不然你只有一个test
-go get是没办法下载这个包的。
+记住，这个包名不能随意称呼，你的文件夹的名称就是你的包名然后里面的XX.go的名字无所谓，只要`package test`用对就可以了，然后你会发现你的包内出现了两个文件 **go.sum** 和 **go.mod**  这个sum包你可以忽略，主要是go.mod包这里的包 首先开头是 module github.com/XXX/test 声明了 这个包的具体名称是 **"github.com/XXX/test"** 但是在调用的时候 包的名称是 test为什么module后面要加上所有的路径呢，原因也是很简单，就是当你 `go get github.com/xxx/test`的时候用，不然你只有一个test go get是没办法下载这个包的。
 4. 将这个包发布到github即可。
 
 ## 版本
+- 你本地的项目引用别人的包的时候可以在go.mod 中指定version的版本，但是什么都不指定也可以，默认是latest，也就是你直接`go get github.com/xx/app`的时候它自动就是引入latest的版本了，要指定某个版本
+你在go.mod 改了就行了。但是记得你的更改不会改变第三个人用你的包时候然后默认下载你的包引用的包的版本，indirect的包（非直接引用的包）的版本是自己定的，不跟引用的直接的包有关系。（能明白吧我感觉有点绕，😝）
 
-- 你的包的具体version其实是 git来管理的 1 你可以使用 git push -vesion 来指定某一个大的version 第二你可以选择不写version
-然后别人用你的包的时候就不能指定这个version了只能用 latest来引入包 通常来说是你最后编辑的日期
+`require github.com/coastroad/test v0.0.0-20190216094021-0555a706efff // indirect`
+这里 后面就是指定的版本 // indirect就是间接引用的意思。
+- 你的包的具体version其实是 git来管理的 1 你可以使用 git push -tag 来指定某一个version.
+第二你可以选择不写version
+然后别人用你的包的时候就不能指定这个version了只能用 latest来引入包 通常来说是你最后编辑的日期例如`v0.0.0-20190216094-55a706efff`
 
 - 版本 version2.X version 3.X该怎么办？go mod官方推荐的方法如下
 
@@ -25,7 +26,7 @@ go get是没办法下载这个包的。
 module github.com/xxx/test/v2
 
 ```
-也就是说你的包的名字还是test但是因为版本是v2.X 所以要在包名后面加入大版本号 /v2
+也就是说你的包的名字还是test但是因为版本是v2.X 所以要在包名后面加入大版本号 /v2(一定是v+数字 比如 v2 v3 v4 v5不能改变写法也不能用v2.3这种写法)
 然后 调用的时候是这样的
 
 ```go
@@ -47,6 +48,12 @@ test.Test()
 > 就算不是v2.45  不通过打tag的方式来发布 比如还是默认的数字，那么只要你在mod中指定是v2 你的版本大号就是v2
 在import中引入还是需要加上v2 只是在mod中 显示的信息是你的最后编辑时间。
 
+还有种写法是
+```go
+module github.com/xx/app.v2
+```
+这种写法也是类似，只是官方不推荐这种写法。
+
 综上：
 
 ```go
@@ -61,14 +68,10 @@ func dd(){
 test.Test()
 }
 ```
-
-即可。
-
 ### 包的存放位置
 
 再使用了go mod后你的go path将没有用了，但是存放的包的位置还是在 老的go path 更明确来说是在 $gopath/src路径
-这个路径会有两个文件 pkg bin 前面这个包是存放的非可执行的包 后面的bin放置的就是可执行的包，你可以把path指向这个
-bin即可。
+这个路径会有两个文件 pkg bin 前面这个包是存放的非可执行的包 后面的bin放置的就是可执行的包，你可以把path指向这个bin即可。
 
 ### go mod tidy
 
@@ -98,12 +101,12 @@ import(
 ### 我该怎么处理我的子包和我的包的关系
 - 本地
 在本地 比如说你的大包要引用子包的内容你可以go.mod 中使用replace，比如github.com/app/中
-要引入 github.com/app/app的东西，你可以 在go.mod 中 用 replace github.com/app/app => "./app" 即可
-当,你发布的时候你把这个replace删掉即可。（仅限 *Unix系统，win的话就是转移路径，win的同学自己看看咋弄就ok了，反正发布的时候要删除）
+要引入 github.com/app/app的东西，你可以 在go.mod 中 用 replace github.com/app/app => ./app 即可
+当,你发布的时候你把这个replace删掉即可。（仅限 *Unix系统，就是改变路径而已，win的同学自己看看咋弄就ok了，反正发布的时候要删除）
 
 ### 当我的文件夹的名称跟我的package写的包名不一样怎么办
 
-要记得 一个文件夹（包）内的的package 名称必须一样，但是可以不跟文件夹的名称一样，使用的时候其实很不爽就是了
+要记得 一个文件夹（包）内的package 名称必须相同，但是可以不跟文件夹的名称一样，使用的时候其实很不爽就是了
 不过也可以用 用法是
 
 比如一个包 它的文件夹是 app 但是 package中的名称是 app1 那么可以这么用
@@ -126,7 +129,7 @@ go mod 无法获得包 错误是`parsing go.mod: unexpected module path "test"
 - 也就是说 go.mod 的module 要跟go get xx/xxx 保持一致 例：`module github.com/app/app` 在使用
 开启 go mod后 使用go get 的时候也是 `go get github.com/app/app`
 
-- 文件夹可以不跟package的具体包名保持一致，import的时候是用的文件夹名 函数中时候是用的package的名字
+- 文件夹可以不跟package的具体包名保持一致，import的时候是用的文件夹名（路径）， 函数中时候是用的package的名字
 
 - 有main包的时候 go.mod 要跟文件夹的名称保持一致，子包该怎么引入就怎么引入 例如 github.com/app/dd
 dd是子包 app这个路径中是main包。
