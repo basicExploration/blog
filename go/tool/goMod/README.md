@@ -99,7 +99,7 @@ import(
 - 本地
 在本地 比如说你的大包要引用子包的内容你可以go.mod 中使用replace，比如github.com/app/中
 要引入 github.com/app/app的东西，你可以 在go.mod 中 用 replace github.com/app/app => "./app" 即可
-当,你发布的时候你把这个replace删掉即可。
+当,你发布的时候你把这个replace删掉即可。（仅限 *Unix系统，win的话就是转移路径，win的同学自己看看咋弄就ok了，反正发布的时候要删除）
 
 ### 当我的文件夹的名称跟我的package写的包名不一样怎么办
 
@@ -138,3 +138,19 @@ dd是子包 app这个路径中是main包。
 - go mod中的module名称一定要跟gitub上的路径（其实是git的路径，这个路径没有github上的tree/master）保持一致。不然没办法拉取
 - 子包和包不能互相引用可以小引大也可以大引小但是不能互相。
 - 不要把项目放到go path中了，go path要取消了。（我猜的）
+- 最后 使用 `go help mod `有几个命令上面有提示。就不一一解释了。
+
+```go
+The commands are:
+
+	download    download modules to local cache
+	edit        edit go.mod from tools or scripts
+	graph       print module requirement graph
+	init        initialize new module in current directory
+	tidy        add missing and remove unused modules
+	vendor      make vendored copy of dependencies
+	verify      verify dependencies have expected content
+	why         explain why packages or modules are needed
+
+
+```
