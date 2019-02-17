@@ -11,8 +11,25 @@
 4. 将这个包发布到github即可。
 
 ## 版本
-- 你本地的项目引用别人的包的时候可以在go.mod 中指定version的版本，但是什么都不指定也可以，默认是latest，也就是你直接`go get github.com/xx/app`的时候它自动就是引入latest的版本了，要指定某个版本
-你在go.mod 改了就行了。但是记得你的更改不会改变第三个人用你的包时候然后默认下载你的包引用的包的版本，indirect的包（非直接引用的包）的版本是自己定的，不跟引用的直接的包有关系。（能明白吧我感觉有点绕，😝）
+- 你本地的项目引用别人的包的时候可以在go.mod 中指定version的版本，但是什么都不指定也可以，默认是latest，也就是你直接`go get github.com/xx/app`的时候它自动就是引入latest的版本了，要指定某个版本，你在go.mod 改了就行了。当包中未使用具体version的时候，第三个人用你的包时候然后默认下载你的包引用的包的版本，indirect的包（非直接引用的包）的版本是最新的那个版本，这里的最新就跟你的最新不是一回事了，如果引用的包的go.mod中明确指明了version而不是latest这种形式，那么你引用它的时候它的间接包的版本默认跟你的是相同的，不过你自己也可以更改的哦（能明白吧我感觉有点绕，😝）
+举例子：
+
+这是gin的go.mod摘选
+```go
+	github.com/gin-contrib/sse v0.0.0-20190124093953-61b50c2ef482
+	github.com/golang/protobuf v1.2.0
+
+```
+这是我本地项目的go.mod摘选：
+```go
+github.com/gin-contrib/sse v0.0.0-20190125020943-a7658810eb74 // indirect
+github.com/golang/protobuf v1.2.0 // indirect
+```
+你会发现同样都是v1.2.0 但是上面的那个 一个是 20190124 一个是20190125,我们看一下下载包的时候的bash的截图
+```bash
+finding github.com/stretchr/testify/assert latest
+```
+如果你用的包它用的包，它没有指定具体的版本，那么你的latest跟他的就可能不是一回事了，这个要清楚。因为go get 下载的时候是此时此刻的latest。
 
 `require github.com/coastroad/test v0.0.0-20190216094021-0555a706efff // indirect`
 这里 后面就是指定的版本 // indirect就是间接引用的意思。
