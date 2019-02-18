@@ -11,6 +11,8 @@
 4. 将这个包发布到github即可。
 
 ## 版本
+> 在`go.mod`中的包后面手动输入latest `github.com/nfnt/resize latest`，go将自动(go list)帮你生成一个版本号 `github.com/nfnt/resize v0.0.0-20180221191011-83c6a9932646`
+
 - 你本地的项目引用别人的包的时候可以在go.mod 中指定version的版本，但是什么都不指定也可以，默认是latest，也就是你直接`go get github.com/xx/app`的时候它自动就是引入latest的版本了，要指定某个版本，你在go.mod 改了就行了。当包中未使用具体version的时候，第三个人用你的包时候然后默认下载你的包引用的包的版本，indirect的包（非直接引用的包）的版本是最新的那个版本，这里的最新就跟你的最新不是一回事了，如果引用的包的go.mod中明确指明了version而不是latest这种形式，那么你引用它的时候它的间接包的版本默认跟你的是相同的，不过你自己也可以更改的哦（能明白吧我感觉有点绕，😝）
 举例子：
 
@@ -107,6 +109,9 @@ import(
 "gitub.com/xxx/ddd/app" // app 是子包 即可。
 )
 ```
+### 我go get的包，但是并没有在我的项目中使用，我该怎么处理我的go.mod
+举个例子，你要拉取一个在github上的包，这个包呢，是一个可执行的包（main包）然后你需要在一个有go.mod的项目中使用go get才能拉下来，然后不出意外你的这个拉取记录就会出现在go.mod上,你不想让他出现该怎么办呢？很简单使用 `go mod tidy `就可以从go.mod 中删除。
+
 ### 我无法使用goalng.org/x的包我该怎么办
 
 例如:
