@@ -766,3 +766,45 @@ type Values struct {
 第二点 如果如果你的子模块就是小的模块很多人称作是母模块 我当他们是小模块子模块，他们里面有变量，那么你肯定是最后使用的是layout这个最外面的文件或者说是模块
 那么你就要`{{template "son".}}`   `.` 看到了吗 这个点没有这个点 你在最外面的模块也就是最终使用的时候你发现你的变量压根没有导入，这个就是 变量导入的标志
 也就是是 你的子有了 如果不导入 那么这个数据就消失了，我被这个地方坑了几个小时。我的天~~~~。
+
+27. 关于iota
+
+这个东西是有几个特点的其中
+- 从0开始自动计数
+- 中间可以有间隔，然后重启计数，并且仍然是按照原先的顺序进行计数
+```go
+package main
+
+import "fmt"
+
+const(
+	a = iota // 从0开始
+	b // 按照iota的特性可以继续往下计数，并且继承它的类型
+	c
+	d
+	e
+	f = "1" //  可以中断
+	tew // 在没有重启之前一直是按照中断时候的定量来进行赋值
+	weew
+	we
+	r
+	t
+	h
+	cd = iota // 直到继续重启，数字是重启了， 但是值类型变成了系统默认值 int
+	gt
+	ut
+	yyt
+	tyy
+)
+
+
+func main() {
+	fmt.Println(a,b,c,d,e,f,tew,weew,we,r,t,h,cd ,gt,ut,yyt,tyy)
+	fmt.Println(reflect.TypeOf(a),reflect.TypeOf(b),reflect.TypeOf(f),reflect.TypeOf(gt))
+
+}
+// output:
+//0 1 2 3 4 1 1 1 1 1 1 1 12 13 14 15 16
+//int64 int64 string int
+
+```
