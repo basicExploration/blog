@@ -1,5 +1,5 @@
 ## go mod go官方的module管理工具
-
+> youtube https://www.youtube.com/watch?v=saJ2c006vp4
 #### 用法：
 
 在一个非go path的路径中新建一个项目，然后使用`go mod init` 就可以初始化一个新的包(要开启这个 `export GO111MODULE=on`写入.bash_profile即可 win的同学自己找找设置 GO111MODULE的win版本设置方法哈)，其实跟github(gitlab都行)用在一起更好
