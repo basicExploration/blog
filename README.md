@@ -11,5 +11,10 @@
 ### docker系列
 - [docker的初识](https://github.com/googege/blog/tree/master/docker/helloWorld/README.md)[ing]
 ### 算法系列
+- [字典树](https://github.com/googege/blog/tree/master/algorithm/trie-tree/README.md)[ing]
+- [二叉树](https://github.com/googege/blog/tree/master/algorithm/binary-tree/README.md)[ing]
+- [红黑树](https://github.com/googege/blog/tree/master/algorithm/red-black-tree/README.md)[ing]
+- [基数树](https://github.com/googege/blog/tree/master/algorithm/radix-tree/README.md)[ing]
 - [排序算法](https://github.com/googege/blog/tree/master/algorithm/sequence/README.md)[ing]
 - [b-tree算法](https://github.com/googege/blog/tree/master/algorithm/b-tree/README.md)[ing])
+- [b+-tree算法](https://github.com/googege/blog/tree/master/algorithm/b+-tree/README.md)[ing]
