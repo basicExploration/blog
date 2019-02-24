@@ -8,3 +8,8 @@
 - [go tool trace](https://github.com/googege/blog/tree/master/go/tool/trace/README.md)[ing]
 ### go本身解析
 - [go语言容易错的几个点](https://github.com/googege/blog/tree/master/go/go/import/README.md)
+### docker系列
+- [docker的初识](https://github.com/googege/blog/tree/master/docker/helloWorld/README.md)[ing]
+### 算法系列
+- [排序算法](https://github.com/googege/blog/tree/master/algorithm/sequence/README.md)[ing]
+- [b-tree算法](https://github.com/googege/blog/tree/master/algorithm/b-tree/README.md)[ing])
