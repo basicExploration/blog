@@ -1,3 +1,6 @@
 *.idea
+*.idea/**
 *.Ds_Store
+*.Ds_Store/**
 node_modules
+node_modules/**
