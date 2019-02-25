@@ -22,3 +22,5 @@
 - [b+-tree算法](https://github.com/googege/blog/tree/master/algorithm/b+-tree/README.md)[ing]
 ### 杂谈
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
+
+注明：你可以免费的查阅观看本文档以及代码。但是你不能用于商业。
