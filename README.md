@@ -20,3 +20,5 @@
 - [排序算法](https://github.com/googege/blog/tree/master/algorithm/sequence/README.md)[ing]
 - [b-tree算法](https://github.com/googege/blog/tree/master/algorithm/b-tree/README.md)[ing])
 - [b+-tree算法](https://github.com/googege/blog/tree/master/algorithm/b+-tree/README.md)[ing]
+### 杂谈
+- [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)[ing]
