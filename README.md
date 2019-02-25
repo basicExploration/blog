@@ -7,7 +7,9 @@
 - [go mod](https://github.com/googege/blog/tree/master/go/tool/goMod/README.md)
 - [go tool trace](https://github.com/googege/blog/tree/master/go/tool/trace/README.md)[ing]
 ### go本身解析
-- [go语言容易错的几个点](https://github.com/googege/blog/tree/master/go/go/import/README.md)
+- [go语言的并发模型](https://github.com/googege/blog/tree/master/go/go/concurrency/README.md)[ing]
+- [go语言的常见优化](https://github.com/googege/blog/tree/master/go/go/optimization/README.md)[ing]
+- [go语言容易错的几个点](https://github.com/googege/blog/tree/master/go/go/important/README.md)
 ### docker系列
 - [docker的初识](https://github.com/googege/blog/tree/master/docker/helloWorld/README.md)[ing]
 ### 算法系列
