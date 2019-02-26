@@ -112,9 +112,7 @@ epoll是Linux为了替代poll模型而打造的支持高并发的模型，net.co
 
 ### syscall 基于操作系统的原生syscall能力
 go语言里的读取都可以使用操作系统提供的syscall功能，几乎所有 Linux 文件相关系统调用，Go 都有封装
-### gosched 基于阻塞的协程调度
 
-### go gc基于三色标记法的并发gc模型
 
 ### net/http基于goroutine的http服务器
 
@@ -125,7 +123,6 @@ go语言里的读取都可以使用操作系统提供的syscall功能，几乎�
 在syscall.map中提供了这个并发安全的map，如果不使用这个原生的map在跨goroutine就可能发生资源抢断的问题，没有这个函数的时候
 
 使用lock unlock也可以实现相关的功能。
-### 可选性能优化手段unsafe非并发安全的指针调用
 
 ### 可实现cas context基于channel的goroutine流程控制能力
 context包，是go新增的一个包，这个包主要的目的是提供一个上下文，我们可以使用这个包来实现goroutine之间的一些调配
@@ -169,6 +166,15 @@ func b(ctx context.Context) {
 
 */
 ```
-### 非并发安全的指针
 
-### 以实现有限的动态性atomic基于cpu原子操作的包装，
+### 以实现有限的动态性 atomic基于cpu原子操作的包装
+atomic包的所有动作都是基于cpu的原子操作，atomic 提供的原子操作能够确保任一时刻只有一个goroutine对变量进行操作
+这样的话就可以避免在程序中出现的大量lock unlock的现象了。你可以理解为atomic是轻量级的锁
+
+### gosched 基于阻塞的协程调度
+
+Gosched产生处理器，允许其他goroutines运行。它不会挂起当前的goroutine，因此执行会自动恢复。
+这句话的意思就是，遇到这个go.Gosched,这个goroutine就会让出执行的机会给其它的goruntine。
+
+
+### go gc基于三色标记法的并发gc模型
