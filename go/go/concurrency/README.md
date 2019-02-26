@@ -107,8 +107,11 @@ channel分为两种：无缓存的channel和有缓存的channel什么区别呢�
 
 ### net.conn 基于epoll的异步io同步阻塞模型
 
-### syscall 基于操作系统的原生syscall能力
+epoll是Linux为了替代poll模型而打造的支持高并发的模型，net.conn基于这个模型进行打造。其实就是go调用了Linux的epoll模型来打造的net.conn
+同步阻塞 其实就是调用多goroutine+非缓存的channel来实现。
 
+### syscall 基于操作系统的原生syscall能力
+go语言里的读取都可以使用操作系统提供的syscall功能，几乎所有 Linux 文件相关系统调用，Go 都有封装
 ### gosched 基于阻塞的协程调度
 
 ### go gc基于三色标记法的并发gc模型
