@@ -1,7 +1,7 @@
 ## 探究go语言的并发和并行原理。
 > 原文地址: https://github.com/googege/blog/tree/master/go/go/concurrency/README.md
 
-#### goroutine基于线程池的P:M:G协程模型
+### goroutine基于线程池的P:M:G协程模型
 首先说明一下go可以有两种并发方式
 - csp
 
