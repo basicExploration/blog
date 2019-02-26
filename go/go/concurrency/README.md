@@ -91,18 +91,36 @@ thread pool 的使用，它是定义在proc.c中，它维护有存储M和G的队
 
 - go单独于os的调度器也就是区别于os的调度器 它是管理这个线程池的  --- 管理如何分配m
 
-#### channel 基于生产者消费者模型的无锁队列
+### channel 基于生产者消费者模型的无锁队列
+
 首先解释一下什么是生产者消费者模式：
 有三个东西，生产数据的一个任务（可以是线程，进程函数等）一个缓存区域，一个使用数据的任务
 这个模式基本上可以类比：厨师做饭+把饭放到前台+你去端饭。
 
-#### net.conn 基于epoll的异步io同步阻塞模型
-#### syscall 基于操作系统的原生syscall能力
-#### gosched 基于阻塞的协程调度
-#### go gc基于三色标记法的并发gc模型
-#### net/http基于goroutine的http服务器
-#### 并发安全的hash map slice
-#### 可选性能优化手段unsafe非并发安全的指针调用
-#### 可实现cas context基于channel的goroutine流程控制能力
-#### 非并发安全的指针
-#### 以实现有限的动态性atomic基于cpu原子操作的包装，
+还记得上文谈的csp模型吗？这里的channel就是csp中通信的部分，上文的goroutine是并发实体
+
+channel的创建是使用的make，那么这说明了什么？说明了channel的初始值肯定是nil，channel变量是一个引用变量（具体是一个struct的指针）
+
+channel分为两种：无缓存的channel和有缓存的channel什么区别呢？无缓存的就是有东西就需要读，不读就没法再往里面加东西
+有缓存的就是不读也能继续加东西。就这么个区别。Channel是Go中的一个核心类型，你可以把它看成一个管道，通过它并发核心单元
+就可以发送或者接收数据进行通讯。
+
+### net.conn 基于epoll的异步io同步阻塞模型
+
+### syscall 基于操作系统的原生syscall能力
+
+### gosched 基于阻塞的协程调度
+
+### go gc基于三色标记法的并发gc模型
+
+### net/http基于goroutine的http服务器
+
+### 并发安全的hash map slice
+
+### 可选性能优化手段unsafe非并发安全的指针调用
+
+### 可实现cas context基于channel的goroutine流程控制能力
+
+### 非并发安全的指针
+
+### 以实现有限的动态性atomic基于cpu原子操作的包装，
