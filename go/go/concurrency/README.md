@@ -118,12 +118,57 @@ go语言里的读取都可以使用操作系统提供的syscall功能，几乎�
 
 ### net/http基于goroutine的http服务器
 
+在看源代码的时候可以看出来每个请求，go都会启动一个goroutine来进行服务。这个就是go net.Listen高并发的关键。
+
 ### 并发安全的hash map slice
 
+在syscall.map中提供了这个并发安全的map，如果不使用这个原生的map在跨goroutine就可能发生资源抢断的问题，没有这个函数的时候
+
+使用lock unlock也可以实现相关的功能。
 ### 可选性能优化手段unsafe非并发安全的指针调用
 
 ### 可实现cas context基于channel的goroutine流程控制能力
+context包，是go新增的一个包，这个包主要的目的是提供一个上下文，我们可以使用这个包来实现goroutine之间的一些调配
+举个例子 当a线程里新增一个b线程，那么当a协程运行5分钟后要求b结束，该怎么做呢？
 
+使用ctx.WitchTimeOut 就给b发送信号，让它关闭，看个例子
+
+```go
+func main(){
+	ctx,cal := context.WithTimeout(context.Background(),5*time.Second)
+	ctx = context.WithValue(ctx,"12","12")
+	go b(ctx)
+	time.Sleep(1e10)
+	cal()// 执行取消命令
+	time.Sleep(1e10)
+
+}
+func b(ctx context.Context) {
+	for {
+		time.Sleep(time.Second)
+		select {
+		case <-ctx.Done():
+			fmt.Println(ctx.Value("12"))
+			return
+		default:
+			fmt.Println(".")
+		}
+	}
+
+}
+
+// output:
+
+/*
+
+.
+.
+.
+.
+12
+
+*/
+```
 ### 非并发安全的指针
 
 ### 以实现有限的动态性atomic基于cpu原子操作的包装，
