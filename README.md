@@ -10,6 +10,7 @@
 - [go语言的并发模型](https://github.com/googege/blog/tree/master/go/go/concurrency/README.md)
 - [go语言的常见优化](https://github.com/googege/blog/tree/master/go/go/optimization/README.md)
 - [go语言容易错的几个点](https://github.com/googege/blog/tree/master/go/go/important/README.md)
+- [go语言的逃逸分析](https://github.com/googege/blog/tree/master/go/go/escape-analysis/README.md)
 ### docker系列
 - [docker的初识](https://github.com/googege/blog/tree/master/docker/helloWorld/README.md)[ing]
 ### 算法系列
