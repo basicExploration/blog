@@ -21,31 +21,30 @@ type user struct {
 }
 
 func main() {
-    u1 := createUserV1()
-    u2 := createUserV2()
+    a1 := createUser1()
+    a2 := createUser2()
 
-    println("u1", &u1, "u2", &u2)
+    fmt.Println("a1", &a1, "a2", &a2)
 }
 
-//go:noinline
-func createUserV1() user {
+func createUser1() user {
     u := user{
         name:  "Bill",
-        email: "bill@ardanlabs.com",
+        email: "@.com",
     }
 
-    println("V1", &u)
+    fmt.Println("V1", &u)
     return u
 }
 
 //go:noinline
-func createUserV2() *user {
+func createUser2() *user {
     u := user{// 发生了逃逸分析
         name:  "Bill",
         email: "bill@ardanlabs.com",
     }
 
-    println("V2", &u)
+    fmt.Println("V2", &u)
     return &u
 }
 ```
@@ -53,3 +52,15 @@ func createUserV2() *user {
 指针指向了栈下的无效地址空间。当 main 函数调用下一个函数，指向的内存将重新映射并将被重新初始化，这就是逃逸分析将开始保持完整性的地方
 
 编译器将检查到，在 createUserV2 的函数栈中构造user值是不安全的，因此，替代地，会在堆中构造相应的值
+
+值只有在编译器编译时知道其大小才会将它分配到栈中。这是因为每个函数的栈帧大小是在编译时计算的。如果编译器不知道其大小，就只会在堆中分配。
+例如有一个数组你没有给它分配大小，那么它就没办法放到栈里就会放到堆里。
+
+总结：
+
+- 当函数执行的时候无法执行**帧边界**下面的部分就会发生将数据推入堆的逃逸分析
+- 当分配的数据，程序无法知道具体的大小的时候就会放到堆里
+
+     > 例如一个不知道大小的map或者一个不知道大小的slice。
+
+逃逸分析的可怕之处就是造成大量的gc，因为堆的数据垃圾回收是go通过gc来回收的。
