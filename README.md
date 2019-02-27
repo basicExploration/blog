@@ -25,4 +25,8 @@
 - [堆和栈的解释](https://github.com/googege/blog/tree/master/mixtalk/heap-stack/README.md)
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
 ### SQL系列
+### Tensorflow系列
+### K8s系列
+### flutter系列
+### JavaScript
 注明：你可以免费的查阅观看本文档以及代码。但是你不能用于商业。
