@@ -12,13 +12,8 @@
 ## docker系列
 - [dockerXXX](https://github.com/googege/blog/tree/master/docker/XXX/README.md)[waiting]
 ## 算法系列
-- [字典树](https://github.com/googege/blog/tree/master/algorithm/trie-tree/README.md)[waiting]
-- [二叉树](https://github.com/googege/blog/tree/master/algorithm/binary-tree/README.md)[waiting]
-- [红黑树](https://github.com/googege/blog/tree/master/algorithm/red-black-tree/README.md)[waiting]
-- [基数树](https://github.com/googege/blog/tree/master/algorithm/radix-tree/README.md)[waiting]
+- [树系列算法](https://github.com/googege/blog/tree/master/algorithm/trie-tree/README.md)[waiting]
 - [排序算法](https://github.com/googege/blog/tree/master/algorithm/sequence/README.md)[waiting]
-- [b-tree算法](https://github.com/googege/blog/tree/master/algorithm/b-tree/README.md)[waiting])
-- [b+-tree算法](https://github.com/googege/blog/tree/master/algorithm/b+-tree/README.md)[waiting]
 ## 杂谈
 - [堆和栈的解释](https://github.com/googege/blog/tree/master/mixtalk/heap-stack/README.md)
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
