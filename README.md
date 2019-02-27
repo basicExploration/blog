@@ -11,11 +11,11 @@
 - [go语言的逃逸分析](https://github.com/googege/blog/tree/master/go/go/escape-analysis/README.md)
 ## docker系列
 - [dockerXXX](https://github.com/googege/blog/tree/master/docker/XXX/README.md)[waiting]
-## 算法系列
-- [树系列算法](https://github.com/googege/blog/tree/master/algorithm/trie-tree/README.md)[waiting]
-- [排序算法](https://github.com/googege/blog/tree/master/algorithm/sequence/README.md)[waiting]
+## 算法和数据结构系列
+- [堆和栈的解释](https://github.com/googege/blog/tree/master/algorithm-structure/heap-stack/README.md)
+- [树系列结构以及相应的算法](https://github.com/googege/blog/tree/master/algorithm-structure/tree/README.md)[waiting]
+- [排序算法](https://github.com/googege/blog/tree/master/algorithm-structure/sequence/README.md)[waiting]
 ## 杂谈
-- [堆和栈的解释](https://github.com/googege/blog/tree/master/mixtalk/heap-stack/README.md)
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
 ## SQL系列
 ## Tensorflow系列
