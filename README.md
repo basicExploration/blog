@@ -9,8 +9,6 @@
 - [go语言的常见优化](https://github.com/googege/blog/tree/master/go/go/optimization/README.md)
 - [go语言容易错的几个点](https://github.com/googege/blog/tree/master/go/go/important/README.md)
 - [go语言的逃逸分析](https://github.com/googege/blog/tree/master/go/go/escape-analysis/README.md)
-## docker系列
-- [dockerXXX](https://github.com/googege/blog/tree/master/docker/XXX/README.md)[waiting]
 ## 算法和数据结构系列
 - [堆和栈的解释](https://github.com/googege/blog/tree/master/algorithm-structure/heap-stack/README.md)
 - [树系列结构以及相应的算法](https://github.com/googege/blog/tree/master/algorithm-structure/tree/README.md)[waiting]
