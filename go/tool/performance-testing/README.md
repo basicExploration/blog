@@ -12,12 +12,16 @@
 - go build  -gcflags "-m -m" 这个标签可以测试何时何物逃逸分析了。（就是从栈逃到堆了）
 
 ### go tool pprof
-
+首先pprof进行分析是有前提的那就是需要有数据，如何来提供数据？go提供了三种办法
+- http/pprof包 将测试单独列为一个独立的goroutine然后单独监听，此包就可以单独的在浏览器中打开一个数据分析的html页面
+- runtime/pprof包 将这包的 类似 start 和stop函数放到数据中间，就可以对这段数据进行测试，进而生成某些测试数据
+- go test 使用 memprofile标签就可以得到一个册数数据
 ### google's pprof
-
+使用测试数据，可将此数据更加可视化的显示在html中
 ### go tool trace
-
+更pprof 类似可使用 http/httptrace包和runtime/trace包进行数据的测试得到测试数据，然后是用go tool trace + 数据即可
 ### go test
-
+跟上文一致，具体的就不展开了就是那个意思。
 ### go build
+如上
 
