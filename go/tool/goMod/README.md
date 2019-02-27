@@ -72,6 +72,7 @@ test.Test()
 module github.com/xx/app.v2
 ```
 这种写法也是类似，只是官方不推荐这种写法。
+> 作为一种特殊情况，以gopkg.in/开头的模块路径继续使用,在该系统上建立的惯例：主要版本始终存在，它前面有一个点而不是斜杠：gopkg.in/yaml.v1和gopkg.in/yaml.v2，而不是gopkg.in/yaml和gopkg.in/yaml/v2。
 
 综上：
 
