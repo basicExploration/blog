@@ -141,7 +141,14 @@ app1.xxx// 这里要跟真实的package保持一致 你看 得不偿失吧 所�
 
 }
 ```
+### 当我想忽略掉某包的时候我该怎么做？
 
+```go
+
+module github.com/x/x
+exclude github.com/test/test latest // 或者把latest换成其它的版本比如v1.23.1 都可以。
+
+```
 ### 注意
 
 你的包如果存放在github上 你的包的go.mod module后面一定是github.com/xxx/xxx不能直接写成 xxx 这样的话
