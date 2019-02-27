@@ -2,17 +2,15 @@
 我的blog，要求必须深入，不能半瓶子咣当。要深入。
 
 ### go 工具解析
-- [go tool pprof](https://github.com/googege/blog/tree/master/go/tool/pprof/README.md)[waiting]
-- [google's pprof](https://github.com/googege/blog/tree/master/go/tool/gpprof/README.md)[waiting]
 - [go mod](https://github.com/googege/blog/tree/master/go/tool/goMod/README.md)
-- [go tool trace](https://github.com/googege/blog/tree/master/go/tool/trace/README.md)[waiting]
+- [go 性能测试](https://github.com/googege/blog/tree/master/go/tool/performance-testing/README.md)
 ### go本身解析
 - [go语言的并发模型](https://github.com/googege/blog/tree/master/go/go/concurrency/README.md)
 - [go语言的常见优化](https://github.com/googege/blog/tree/master/go/go/optimization/README.md)
 - [go语言容易错的几个点](https://github.com/googege/blog/tree/master/go/go/important/README.md)
 - [go语言的逃逸分析](https://github.com/googege/blog/tree/master/go/go/escape-analysis/README.md)
 ### docker系列
-- [dockerXXX](https://github.com/googege/blog/tree/master/docker/XXX/README.md)
+- [dockerXXX](https://github.com/googege/blog/tree/master/docker/XXX/README.md)[waiting]
 ### 算法系列
 - [字典树](https://github.com/googege/blog/tree/master/algorithm/trie-tree/README.md)[waiting]
 - [二叉树](https://github.com/googege/blog/tree/master/algorithm/binary-tree/README.md)[waiting]
