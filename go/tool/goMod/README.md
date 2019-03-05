@@ -149,6 +149,12 @@ module github.com/x/x
 exclude github.com/test/test latest // 或者把latest换成其它的版本比如v1.23.1 都可以。
 
 ```
+### 该如何配置包的路径
+举个例子，你有一个域名 `please.io`，有服务器，你想让被人下载的时候不使用github.com/xx/xx 而是使用自己的路径进行下载，那么你可以这么做
+
+- 首先将你的go mod 中的module命名为你自己设定的路径 例如 `module please.io/tt` 然后还是放在github上，
+- 在你的服务器上增加一个route，`/tt`然后在打开的这个页面的html的meta标签里添加上`<meta name="go-import" content="please.io/tt git https//github.com/xx/xx">`
+- 搞定了。
 ### 注意
 
 你的包如果存放在github上 你的包的go.mod module后面一定是github.com/xxx/xxx不能直接写成 xxx 这样的话
