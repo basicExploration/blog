@@ -11,7 +11,7 @@
 - [go语言的逃逸分析](https://github.com/googege/blog/tree/master/go/go/escape-analysis/README.md)
 - [go语言的一些不容易被注意到的但是又很重要的问题](https://github.com/googege/blog/tree/master/go/go/ignore-but-important/README.md)
 ## go周边
-- [gin中间件的开发]()
+- [gin中间件的开发](https://github.com/googege/blog/tree/master/go/go-surrounding/gin-middleware/README.md)
 ## 算法和数据结构系列
 - [堆和栈的解释](https://github.com/googege/blog/tree/master/algorithm-structure/heap-stack/README.md)
 - [树系列结构以及相应的算法](https://github.com/googege/blog/tree/master/algorithm-structure/tree/README.md)[waiting]
