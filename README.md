@@ -4,7 +4,6 @@
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu) [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 ## go 工具解析
 - [go mod](https://github.com/googege/blog/tree/master/go/tool/goMod/README.md)
-- [go 性能测试](https://github.com/googege/blog/tree/master/go/tool/performance-testing/README.md)
 ## go本身解析
 - [go语言的并发模型](https://github.com/googege/blog/tree/master/go/go/concurrency/README.md)
 - [go语言的常见优化](https://github.com/googege/blog/tree/master/go/go/optimization/README.md)
@@ -18,13 +17,14 @@
 - [树系列结构以及相应的算法](https://github.com/googege/blog/tree/master/algorithm-structure/tree/README.md)[waiting]
 - [排序算法](https://github.com/googege/blog/tree/master/algorithm-structure/sequence/README.md)[waiting]
 ## 杂谈
-- [网络协议知多少](https://github.com/googege/blog/tree/master/mixtalk/net/README.md)
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
 ## 前端基本用法
 ## 操作系统
 ## 设计模式
 ## 网络
+- [网络协议知多少](https://github.com/googege/blog/tree/master/mixtalk/net/README.md)
 ## 测试
+- [go 性能测试](https://github.com/googege/blog/tree/master/go/tool/performance-testing/README.md)
 ## 容器技术
 ## 数据库
 ## 安全
