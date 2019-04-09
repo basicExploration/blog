@@ -27,6 +27,7 @@
 - [go 性能测试](https://github.com/googege/blog/tree/master/go/tool/performance-testing/README.md)
 ## 容器技术
 ## 数据库
+- [mysql在mac上开发 在Linux上发布的过程](https://github.com/googege/blog/tree/master/db/mysql/mysqlMacOSTOLinux/README.md)
 ## 安全
 ## 常用框架
 ## 项目管理
