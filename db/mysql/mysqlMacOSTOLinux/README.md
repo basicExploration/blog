@@ -87,6 +87,15 @@ mysql -u用户名    -p密码    <  要导入的数据库数据(runoob.sql)
 ```
 这其实会报错,原因是 mysql不允许 使用-p密码 这种 方式 只能使用-p 然后输入密码 才可以 
 
+****
+如何进行备份你的文件
+
+```bash
+mysqldump -u root mathcoolEnd > ~/Desktop/tt.sql -p
+
+```
+这会备份 你的所有文件，包括表头和表内容。
+
 以上所有言论 均在 mysql community 8.x版本的言论，不涉及到 mariadb 以及 8.0以前的版本.
 
 参考资料: https://dev.mysql.com/doc/refman/8.0/en/linux-installation-yum-repo.html
