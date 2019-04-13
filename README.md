@@ -16,6 +16,7 @@
 - [堆和栈的解释](https://github.com/googege/blog/tree/master/algorithm-structure/heap-stack/README.md)
 - [树系列结构以及相应的算法](https://github.com/googege/blog/tree/master/algorithm-structure/tree/README.md)[waiting]
 - [排序算法](https://github.com/googege/blog/tree/master/algorithm-structure/sequence/README.md)[waiting]
+- [队列-go语言版](https://github.com/googege/blog/tree/master/algorithm-structure/queue/README.md)
 ## 杂谈
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
 ## 前端基本用法
