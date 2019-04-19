@@ -6,6 +6,37 @@
 
 - go ints vs 冒泡法
 
+```bash
+n = 1 5 10 15 20 25 30 35
+
+56.2 ns/op
+5.13 ns/op
+
+84.8 ns/op
+25.1 ns/op
+
+138 ns/op
+76.7 ns/op
+
+248 ns/op
+151 ns/op
+
+352 ns/op
+257 ns/op
+
+395 ns/op
+402 ns/op
+
+599 ns/op
+580 ns/op
+
+691 ns/op
+810 ns/op
+
+```
+
+基本上 30是分界线，越往后 go越快
+
 - go ints vs 选择排序
 
 ```bash
