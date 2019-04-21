@@ -1,6 +1,8 @@
 # blog
 我的blog，要求必须深入，不能半瓶子咣当。要深入。
 
+## 有招人的吗? 应届，go后端web开发，目前 实习了大半年了，想正式工作，又招聘的，麻烦给我提出 issue 谢谢啦！！！！！！
+
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu) [![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
 ## go 工具解析
 - [go mod](https://github.com/googege/blog/tree/master/go/tool/goMod/README.md)
