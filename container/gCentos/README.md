@@ -1,4 +1,4 @@
-## 输入我的Docker 镜像
+## 包含了node go mysql ss 的一个centos 镜像。
  ```bash
 docker pull imgoogege/gcentos
 ```
