@@ -20,6 +20,12 @@
 ![p](https://raw.githubusercontent.com/googege/blog/master/container/k8s-node.png)
 ![p](https://raw.githubusercontent.com/googege/blog/master/container/k8s-pod.png)
 
+讲述了 不同的抽象符合和pod node的关系
+![p](https://raw.githubusercontent.com/googege/blog/master/container/dockerK8s/k8s-diffService-pods.png)
+讲述了 不同的pod是如何划分组合的  答案就是利用label
+![p](https://raw.githubusercontent.com/googege/blog/master/container/dockerK8s/k8s-label.png)
+
+
 
 ### docker
 
