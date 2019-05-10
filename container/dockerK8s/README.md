@@ -17,6 +17,9 @@
 
 这里我们要看一下 一个node中有很多内容，但是基本的操作是pod，这里面的docker等就是一个工具一样，所以这个时候又引出来了一句话：docker不是容器，docker是创建容器的工具。
 
+![p](https://raw.githubusercontent.com/googege/blog/master/container/k8s-node.png)
+![p](https://raw.githubusercontent.com/googege/blog/master/container/k8s-pod.png)
+
 
 ### docker
 
