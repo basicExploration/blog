@@ -27,7 +27,7 @@
 ## 设计模式
 ## 网络
 - [网络协议知多少](https://github.com/googege/blog/tree/master/mixtalk/net/README.md)
-- [GET vs POST](https://github.com/googege/blog/tree/master/mixtalk/net/GETVsPost/README.md)
+- [GET vs POST](https://github.com/googege/blog/tree/master/mixtalk/net/GETVsPOST)
 ## 测试
 - [go 性能测试](https://github.com/googege/blog/tree/master/go/tool/performance-testing/README.md)
 ## 容器技术
