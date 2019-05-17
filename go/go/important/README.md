@@ -818,7 +818,7 @@ import "fmt"
 
 func main() {
 	a := []int{1, 2, 3}
-	for k, v := range a { // range 中使用的是复制值，但是由于slice底层array连带变了,所以v值就会产生变化
+	for k, v := range a { // range后面的a 是对于 上面的a的复制值 ，但是由于slice底层array连带变了,所以v值就会产生变化
 		if k == 0 {
 			a[0], a[1] = 100, 200
 			fmt.Print(a)
@@ -828,7 +828,7 @@ func main() {
 	fmt.Print(a)
 
 	a1 := [3]int{1, 2, 3}
-	for k, v := range a1 { // array就不牵涉到底层问题。v值始终都是123
+	for k, v := range a1 { // 这里的a1 是上面a1的复制值，所以v永远就跟之前的那个样子一样，纵然 真实的a1发生了变化但是复制值是不会变化的
 		if k == 0 {
 			a1[0], a1[1] = 100, 200
 			fmt.Print(a1)
