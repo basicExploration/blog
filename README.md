@@ -1,5 +1,3 @@
-# blog
-
 <div align="center">
     <img src="blog.png" width="260">
     <br>
