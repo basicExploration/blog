@@ -1,8 +1,7 @@
 # blog
-> 我的blog，要求必须深入，不能半瓶子咣当。要深入。
 
 <div align="center">
-    <img src="blog.png" width="200px">
+    <img src="blog.png" width="300px">
     <br>
     <a href="https://996.icu"> <img src="https://img.shields.io/badge/link-996.icu-red.svg"></a>  
     <br> <br>
