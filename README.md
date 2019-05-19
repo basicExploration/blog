@@ -1,7 +1,7 @@
 # blog
 
 <div align="center">
-    <img src="blog.png" width="300px">
+    <img src="blog.png" width="260">
     <br>
     <a href="https://996.icu"> <img src="https://img.shields.io/badge/link-996.icu-red.svg"></a>  
     <br> <br>
