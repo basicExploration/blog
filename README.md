@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://github.com/googege"><img src="blog.png" width="260"></a>
+    <a href="https://github.com/googege/blog"><img src="blog.png" width="260"></a>
     <br>
     <a href="https://996.icu"> <img src="https://img.shields.io/badge/link-996.icu-red.svg"></a>  
     <br> <br>
