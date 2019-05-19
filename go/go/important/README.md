@@ -841,3 +841,34 @@ func main() {
 
 
 ```
+
+### 关于range时的指针问题  -- 动态数据问题
+
+```go
+func pase_student() {
+    m := make(map[string]*student)
+    stus := []student{
+        {Name: "zhou", Age: 24},
+        {Name: "li", Age: 23},
+        {Name: "wang", Age: 22},
+    }
+    // 错误写法
+    for _, stu := range stus {
+        m[stu.Name] = &stu  问题出在哪个地方了？ 很简单 所有的 m[xxx] = "同样称呼的动态地址" 也就是说 大家都是等于 &stu 除非每次等于的东西不一样否则 那最后取得的值肯定一样。 除非是 等 &stu+i i++ 就是这么个问题，为什么 stu.name 没问题原因人不是动态类型啊 直接取得到真实值了呗。
+    }
+ 
+    for k,v:=range m{
+        println(k,"=>",v.Name)
+    }
+ 
+    // 正确
+    for i:=0;i<len(stus);i++  {
+        m[stus[i].Name] = &stus[i]
+    }	
+	for k,v:=range m{
+        println(k,"=>",v.Name)
+    }
+}
+
+
+```
