@@ -554,6 +554,30 @@ func visit(t []string){
 
 16. 关于带（bare return）形参及不带形参的返回值和defer的故事
 
+带bare的那种 ，最后的栈尾是 包含了defer了的，不带bare的不包含defer 
+举个例子
+
+```go
+
+func a(i int)(t int){
+defer func(){
+t+=i
+}
+return 1
+}
+a(12)
+那么结局是 13 过程是  在return1的时候这个时候t就是等于1
+的但是因为defer栈还没结束，那么开始执行了最后的defer了，然后return出去了的值，那这个值就是 13
+
+func a(i int)int{
+defer func(){
+t+=i
+}
+return 1 // 因为是不带bare的那么 return的栈就直接出来了，defer是不经过这个return栈的 defer之后调用了os.exit() 所以 1 就是最后的返回值。
+}
+
+
+```
 看两个例子：
 
 > 之前的例子说过了，defer只是执行滞后但是参数记住是参数也就是将形参传入实参的过程其实是同步的并没有什么区别。
