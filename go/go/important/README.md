@@ -1007,3 +1007,43 @@ func a(){
 
 
 ```
+
+### go中通道发送完以后一定要关闭通道，不然就会死锁
+
+```go
+package main
+
+import (
+	"fmt"
+	"sync"
+)
+
+var wg sync.WaitGroup
+
+func main() {
+	var line string
+	fmt.Scanln(&line)
+	ch := make(chan string, 1000)
+	wg.Add(2)
+	for _, value := range line {
+		ch <- string(value)
+	}
+	close(ch) // 这里 如果不关闭ch就会造成死锁。
+	go func() {
+		for n := range ch {
+			fmt.Println("读者1range：", n)
+		}
+		wg.Done()
+	}()
+	go func() {
+		for n := range ch {
+			fmt.Println("\t读者2range：", n)
+		}
+		wg.Done()
+	}()
+	wg.Wait()
+}
+
+````
+
+没close的不能用for range 也就是说你如果想range一个通道，那么这个通道需要时close的通道
