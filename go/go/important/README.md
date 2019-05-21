@@ -1055,4 +1055,6 @@ func main() {
 如果输入是一定的值 直接输入完close即可，然后使用range 如果 不一定那么不能close 使用for{}的一般形式去读取即可。
 
 ### 不能修改字典中value为结构体的属性值。
+
+map中的value其实是指向value的指针，指针可以读取结构体的属性值，但是无法更改值，需要一个新的struct，然后让map的value值等于这个struct即可。
 	
