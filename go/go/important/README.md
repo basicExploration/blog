@@ -894,6 +894,8 @@ func main() {
 
 ### 关于range时的指针问题  -- 动态数据问题
 
+
+
 ```go
 func pase_student() {
     m := make(map[string]*student)
@@ -904,6 +906,8 @@ func pase_student() {
     }
     // 错误写法
     for _, stu := range stus {
+    // 关键的地方就是在于 range后面的那个stus是上面的那个的复制值，所以stu也是一个复制的值它怎么变都不会改变上面那个真实的stus的结果所以应该
+    // 使用 i := 0 stus[i] i++ 这样的方式来改变range的这种复制的结果。这样就可以真实改变status的值了。
         m[stu.Name] = &stu  问题出在哪个地方了？ 很简单 所有的 m[xxx] = "同样称呼的动态地址" 也就是说 大家都是等于 &stu 除非每次等于的东西不一样否则 那最后取得的值肯定一样。 除非是 等 &stu+i i++ 就是这么个问题，为什么 stu.name 没问题原因人不是动态类型啊 直接取得到真实值了呗。
     }
  
