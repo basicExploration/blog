@@ -8,6 +8,7 @@
 ## go 工具解析
 - [go mod](https://github.com/googege/blog/tree/master/go/tool/goMod/README.md)
 ## go本身解析
+- [go并发时的死锁问题](https://github.com/googege/blog/tree/master/go/go/deadlock/README.md)
 - [go语言的并发模型](https://github.com/googege/blog/tree/master/go/go/concurrency/README.md)
 - [go语言的常见优化](https://github.com/googege/blog/tree/master/go/go/optimization/README.md)
 - [go语言容易错的几个点](https://github.com/googege/blog/tree/master/go/go/important/README.md)
