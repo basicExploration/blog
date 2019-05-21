@@ -984,3 +984,22 @@ loop: // 内层
 goto loop
 }
 ```
+### 关于panic和defer
+
+结论： 同一个作用域中的panic会相互的覆盖，所以recover显示的是最后的那个结果
+
+```go
+func a(){
+	defer func() {
+		if r := recover();r != nil {
+			fmt.Println("hhahah",r)
+		}
+	}()
+	defer func() {
+		panic("1")
+	}()
+	panic("2") // 2 就被1覆盖了。
+}
+
+
+```
