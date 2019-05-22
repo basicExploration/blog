@@ -27,6 +27,7 @@
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
 ## 前端基本用法
 ## 操作系统
+- [孤儿进程，僵尸进程，守护进程](https://github.com/googege/blog/tree/master/system/linux/kid-kid-kid/README.md)
 ## 设计模式
 ## 网络
 - [网络协议知多少](https://github.com/googege/blog/tree/master/mixtalk/net/README.md)
