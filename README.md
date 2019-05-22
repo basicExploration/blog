@@ -41,6 +41,7 @@
 - [docker + k8s](https://github.com/googege/blog/tree/master/container/dockerK8s/README.md)
 - [gCentos](https://github.com/googege/blog/tree/master/container/gCentos/README.md)
 ## 数据库
+- [redis](https://github.com/googege/blog/tree/master/db/redis)
 - [mysql在mac上开发 在Linux上发布的过程](https://github.com/googege/blog/tree/master/db/mysql/mysqlMacOSTOLinux/README.md)
 ## 安全
 ## 常用框架
