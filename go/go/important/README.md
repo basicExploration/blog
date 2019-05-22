@@ -1058,3 +1058,26 @@ func main() {
 
 map中的value其实是指向value的指针，指针可以读取结构体的属性值，但是无法更改值，需要一个新的struct，然后让map的value值等于这个struct即可。
 	
+### 关于go的多重循环体 [for, select, switch]
+
+> https://golang.org/ref/spec#Break_statements
+
+因为他们之间的嵌套因为并不知道要跳出的是哪一层，所以这个时候，我们需要加上标签，也就是跟goto那个标签很像的那个标签
+````go
+LOOP: //注意 Loop是放到for上面的，我们再看goto
+for{
+select{
+case:
+break LOOP
+}
+}
+
+for {
+select {
+case:
+goto Loop
+}
+}
+Loop: // 应该放到for下面，因为goto是直接跳转。而多重的循环体是为了指定break哪一层。所以break和continue都是放到上面、
+
+````
