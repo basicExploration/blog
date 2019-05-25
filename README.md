@@ -23,6 +23,7 @@
 - [队列-go语言版](https://github.com/googege/blog/tree/master/algorithm-structure/queue/README.md)
 - [go语言的ints算法和各大经典排序算法的对比]((https://github.com/googege/blog/tree/master/algorithm-structure/vs/README.md))
 ## 杂谈
+- [知识架构大总结](https://github.com/googege/blog/tree/master/mixtalk/all/README.md)
 - [go 真实公司面试题集锦](https://github.com/googege/blog/tree/master/mixtalk/m/README.md)
 - [go语言招聘问题大全](https://github.com/googege/blog/tree/master/mixtalk/go-application-question/README.md)
 ## 前端基本用法
