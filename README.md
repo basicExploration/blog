@@ -33,9 +33,8 @@
 - [gCentos](https://github.com/googege/blog/tree/master/container/gCentos/README.md)
 - [redis](https://github.com/googege/blog/tree/master/db/redis)
 - [mysql在mac上开发 在Linux上发布的过程](https://github.com/googege/blog/tree/master/db/mysql/mysqlMacOSTOLinux/README.md)
+## 欢迎加入算法讨论群
 ![p](https://raw.githubusercontent.com/googege/AMAC/master/joinUs.png)
-***
-
 ☕️如何真的对你有帮助，你可以请我喝杯咖啡，这样我就可以有精神了，多谢多谢
 
 ![p](https://raw.githubusercontent.com/googege/Files/master/donate.png)
