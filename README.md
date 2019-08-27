@@ -33,6 +33,7 @@
 - [gCentos](https://github.com/googege/blog/tree/master/container/gCentos/README.md)
 - [redis](https://github.com/googege/blog/tree/master/db/redis)
 - [mysql在mac上开发 在Linux上发布的过程](https://github.com/googege/blog/tree/master/db/mysql/mysqlMacOSTOLinux/README.md)
+- [计算机学科以及临床学科，学科排名](https://gitub.com/basicExploration/blog/tree/master/mixtalk/howToFindYourSchool/README.md)
 ## 欢迎加入算法讨论群
 ![p](https://raw.githubusercontent.com/googege/AMAC/master/joinUs.png)
 
