@@ -35,6 +35,7 @@
 - [mysql在mac上开发 在Linux上发布的过程](https://github.com/googege/blog/tree/master/db/mysql/mysqlMacOSTOLinux/README.md)
 - [计算机学科以及临床学科，学科排名](https://github.com/basicExploration/blog/tree/master/mixtalk/howToFindYourSchool/README.md)
 - [如何加入谷歌](https://github.com/basicExploration/blog/tree/master/mixtalk/howToJoinGoogle)
+- [程序员如何赚更多的钱](https://github.com/basicExploration/blog/tree/master/mixtalk/howToMakeMoreMoney)
 ## 欢迎加入算法讨论群
 ![p](https://raw.githubusercontent.com/googege/AMAC/master/joinUs.png)
 
