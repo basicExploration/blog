@@ -21,6 +21,7 @@
   - Virtul Box
   - android studio
   - ssr
+  - bestTrace
 - 万能视频下载软件
   - Aria2GUI
 - 媒体软件
@@ -30,4 +31,8 @@
   - wps office
 - 邮箱
   - spark
+- 抢票软件
+  - 万人抢票联盟
+- android模拟器
+  - 网易mumu
   
