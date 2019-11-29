@@ -1,1 +1,33 @@
 # mac 必备软件集锦
+
+- 聊天工具
+  - mac qq
+  - 微信
+- 压缩工具
+  - keka
+- 万能视频播放器
+  - INA
+- GIF制作
+  - kap
+- 删除软件
+  - AppCleaner
+- 软件开发软件
+  - postman
+  - Mongodb Compass
+  - docker
+  - k8s
+  - golang
+  - atom
+  - Virtul Box
+  - android studio
+  - ssr
+- 万能视频下载软件
+  - Aria2GUI
+- 媒体软件
+  - 爱奇艺
+  - 网易云
+- 办公软件
+  - wps office
+- 邮箱
+  - spark
+  
