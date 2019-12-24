@@ -6,11 +6,13 @@
 
 - 服务器请安装Linux，版本不限
 
-- 安装[go语言](https://golang.google.cn/dl/)
+- 安装 git
 
-- 按照说明安装好go语言后 安装ssr-server：go get github.com/shadowsocks/shadowsocks-go/cmd/shadowsocks-server
+- 安装ssr-server：git clone github.com/shadowsocks/shadowsocks-go/ 
 
-- 在/home/go/bin 中找到shadowsocks-server 在同一个路径下新建一个config.json的文件文件内容[为](https://github.com/shadowsocks/shadowsocks-go/blob/master/config.json)
+- 在这个路径下 找到cmd/shadowsocks-server 即可
+
+- 在同一个路径下新建一个config.json的文件文件内容[为](https://github.com/shadowsocks/shadowsocks-go/blob/master/config.json)
 
 - 使用root去运行shadowsockets-server即可 `sudo nohup ./shadowsocks-server &`
 
